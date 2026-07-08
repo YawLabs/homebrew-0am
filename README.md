@@ -25,3 +25,17 @@ brew install --cask 0am-relay
 This tap is updated by `release.sh` in the [0am](https://github.com/YawLabs/zero-am)
 repo at every release. Do not hand-edit `Casks/*.rb` -- the release script
 rewrites version + sha256 atomically.
+
+## Troubleshooting
+
+If `brew install --cask 0amd` succeeds but the binary refuses to launch with
+"cannot be opened because the developer cannot be verified" or a similar
+Gatekeeper complaint, the postflight `xattr` strip didn't catch a re-applied
+quarantine bit. Run manually:
+
+```sh
+xattr -r -d com.apple.quarantine $(brew --prefix)/bin/0amd
+```
+
+The proper fix is notarizing the binary; the `xattr` postflight is a
+workaround until then (same posture as the `yaw` cask in `homebrew-yaw`).

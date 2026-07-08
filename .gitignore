@@ -1,0 +1,15 @@
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor noise
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Homebrew downloads (the cask JS may run `brew fetch` locally; never
+# commit the downloaded archives).
+*.zip
+*.dmg
+*.pkg
