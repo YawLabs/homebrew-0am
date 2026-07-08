@@ -23,7 +23,7 @@ cask "0am-control" do
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-r", "-d", "com.apple.quarantine", "#{appdir}/0am-control"],
+                   args: ["-r", "-d", "com.apple.quarantine", "#{HOMEBREW_PREFIX}/bin/0am-control"],
                    must_succeed: false
   end
 end

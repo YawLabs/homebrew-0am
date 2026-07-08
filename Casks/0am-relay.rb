@@ -22,7 +22,7 @@ cask "0am-relay" do
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-r", "-d", "com.apple.quarantine", "#{appdir}/0am-relay"],
+                   args: ["-r", "-d", "com.apple.quarantine", "#{HOMEBREW_PREFIX}/bin/0am-relay"],
                    must_succeed: false
   end
 end

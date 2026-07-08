@@ -25,9 +25,11 @@ cask "0amd" do
   # trips Gatekeeper. Strip it after install/upgrade so the daemon launches
   # without a manual `xattr -cr`. Remove this once the binary is notarized
   # (the real fix; see homebrew-yaw Casks/yaw.rb for the same posture).
+  # No `app` stanza in this cask (binary-only), so we target the installed
+  # binary at HOMEBREW_PREFIX/bin/<name> directly.
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-r", "-d", "com.apple.quarantine", "#{appdir}/0amd"],
+                   args: ["-r", "-d", "com.apple.quarantine", "#{HOMEBREW_PREFIX}/bin/0amd"],
                    must_succeed: false
   end
 end
