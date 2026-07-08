@@ -5,7 +5,7 @@ cask "0am-control" do
   if Hardware::CPU.arm?
     sha256 "PLACEHOLDER_SHA256_DARWIN_ARM64"
   else
-    sha256 "PLACEHOLDER_SHA256_DARWIN_X64"
+    sha256 "PLACEHOLDER_SHA256_DARWIN_AMD64"
   end
 
   url "https://downloads.0am.sh/0am-control-darwin-#{arch}-#{version}.zip"
