@@ -1,11 +1,11 @@
 cask "0am-relay" do
   arch arm: "arm64", intel: "amd64"
-  version "0.0.0-dev"
+  version "0.7.1"
 
   if Hardware::CPU.arm?
-    sha256 "PLACEHOLDER_SHA256_DARWIN_ARM64"
+    sha256 "PLACEHOLDER_SHA256_DARWIN_ARM64_0AMRELAY"
   else
-    sha256 "PLACEHOLDER_SHA256_DARWIN_AMD64"
+    sha256 "PLACEHOLDER_SHA256_DARWIN_AMD64_0AMRELAY"
   end
 
   url "https://downloads.0am.sh/0am-relay-darwin-#{arch}-#{version}.zip"

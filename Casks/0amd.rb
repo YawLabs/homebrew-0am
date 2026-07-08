@@ -1,11 +1,11 @@
 cask "0amd" do
   arch arm: "arm64", intel: "amd64"
-  version "0.0.0-dev"
+  version "0.7.1"
 
   if Hardware::CPU.arm?
-    sha256 "PLACEHOLDER_SHA256_DARWIN_ARM64"
+    sha256 "PLACEHOLDER_SHA256_DARWIN_ARM64_0AMD"
   else
-    sha256 "PLACEHOLDER_SHA256_DARWIN_AMD64"
+    sha256 "PLACEHOLDER_SHA256_DARWIN_AMD64_0AMD"
   end
 
   url "https://downloads.0am.sh/0amd-darwin-#{arch}-#{version}.zip"
