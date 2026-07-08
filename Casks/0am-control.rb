@@ -1,5 +1,5 @@
 cask "0am-control" do
-  arch arm: "arm64", intel: "x64"
+  arch arm: "arm64", intel: "amd64"
   version "0.0.0-dev"
 
   if Hardware::CPU.arm?
